@@ -40,7 +40,7 @@ The Android front-end of the application offers an intuitive and seamless user e
 The back-end of the application is robust and efficient, handling CRUD operations seamlessly. Here's a breakdown of its features:
 
 ### API Development
-- A RESTful API is developed using Kotlin, powered by frameworks like Ktor or Spring Boot. This API provides endpoints to facilitate Create, Read, Update, and Delete operations for tasks, ensuring efficient data management.
+- A RESTful API is developed using Kotlin, powered by frameworks Ktor. This API provides endpoints to facilitate Create, Read, Update, and Delete operations for tasks, ensuring efficient data management.
 
 ### Data Storage
 - The application integrates with a database system  MongoDB to store task data securely. Data models are meticulously designed to accurately represent tasks and their associated attributes.
