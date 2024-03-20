@@ -35,7 +35,7 @@ The Android front-end of the application offers an intuitive and seamless user e
 ### Styling and Responsiveness
 - With a focus on modern design principles, the application is styled to be visually appealing and user-friendly. Responsive design ensures compatibility across various screen sizes and orientations, providing a consistent experience for all users.
 
-## Back-End (Kotlin)
+## [Back-End (Ktor)](https://github.com/bibekanandan892/Task_Manager_Backend)
 
 The back-end of the application is robust and efficient, handling CRUD operations seamlessly. Here's a breakdown of its features:
 
