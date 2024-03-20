@@ -43,7 +43,7 @@ The back-end of the application is robust and efficient, handling CRUD operation
 - A RESTful API is developed using Kotlin, powered by frameworks like Ktor or Spring Boot. This API provides endpoints to facilitate Create, Read, Update, and Delete operations for tasks, ensuring efficient data management.
 
 ### Data Storage
-- The application integrates with a database system (e.g., PostgreSQL, MySQL, MongoDB) to store task data securely. Data models are meticulously designed to accurately represent tasks and their associated attributes.
+- The application integrates with a database system  MongoDB to store task data securely. Data models are meticulously designed to accurately represent tasks and their associated attributes.
 
 ### Validation and Error Handling
 - Server-side validation mechanisms are in place to maintain data integrity and consistency. Error handling is robust, providing clear and informative messages to users in response to erroneous requests.
