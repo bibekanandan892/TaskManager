@@ -1,0 +1,6 @@
+![Screenshot_20240321-003848_TaskManager](https://github.com/bibekanandan892/TaskManager/assets/48781831/48144731-f53c-4c35-bf16-6c520e3c6c3c)
+![Screenshot_20240321-003845_TaskManager](https://github.com/bibekanandan892/TaskManager/assets/48781831/a3b6fe4b-0ae5-4c8a-84ef-828e64adfb4e)
+![Screenshot_20240321-003905_TaskManager](https://github.com/bibekanandan892/TaskManager/assets/48781831/4dbed389-2a00-4bef-9a58-e99e174f4b00)
+![Screenshot_20240321-003901_TaskManager](https://github.com/bibekanandan892/TaskManager/assets/48781831/b8c1938f-c4e9-406e-947d-4df18161dad8)
+![Screenshot_20240321-003858_TaskManager](https://github.com/bibekanandan892/TaskManager/assets/48781831/b422eb81-b5a9-4f24-8fd5-fea394a0aec1)
+![Screenshot_20240321-003854_TaskManager](https://github.com/bibekanandan892/TaskManager/assets/48781831/2385b63f-42f9-4b33-9fb2-08a7cb0dced5)
