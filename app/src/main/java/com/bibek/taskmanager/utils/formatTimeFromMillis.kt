@@ -3,7 +3,9 @@ package com.bibek.taskmanager.utils
 import android.content.ContentResolver
 import android.content.Context
 import android.net.Uri
+import android.text.TextUtils
 import android.util.Base64
+import android.util.Patterns
 import androidx.compose.ui.graphics.Color
 import com.bibek.taskmanager.ui.theme.Done
 import com.bibek.taskmanager.ui.theme.InProgress
@@ -85,4 +87,17 @@ suspend fun uriToBase64(contentResolver: ContentResolver, uri: Uri): String? {
             byteArrayOutputStream?.close()
         }
     }
+
+}
+
+fun validateCredentials(username:String = "",emailAddress:String,password:String,isLogin: Boolean): Pair<Boolean,String>{
+    var result=Pair(true,"")
+    if(!isLogin && TextUtils.isEmpty(username) || TextUtils.isEmpty(emailAddress) || TextUtils.isEmpty(password)){
+        result=Pair(false,"Please provide the credentials")
+    }else if(!Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches()){
+        result=Pair(false,"Please provide the valid credentials")
+    }else if(password.length <=5){
+        result=Pair(false,"Password length should be greater then 5")
+    }
+    return result
 }

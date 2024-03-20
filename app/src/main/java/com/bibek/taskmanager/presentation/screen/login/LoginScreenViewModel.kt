@@ -7,6 +7,7 @@ import com.bibek.taskmanager.presentation.navigation.graph.Navigator
 import com.bibek.taskmanager.presentation.navigation.routes.Destinations
 import com.bibek.taskmanager.utils.NetworkResult
 import com.bibek.taskmanager.utils.Toaster
+import com.bibek.taskmanager.utils.validateCredentials
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -71,6 +72,11 @@ class LoginScreenViewModel @Inject constructor(
     }
 
     private suspend fun login() {
+        val isValid = validateCredentials(emailAddress = uiState.value.email, password = uiState.value.password, isLogin = true)
+        if (!isValid.first){
+            toaster.error(isValid.second)
+            return
+        }
         useCases.signInUseCase.invoke(
             email = uiState.value.email,
             password = uiState.value.password,

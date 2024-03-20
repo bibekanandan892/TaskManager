@@ -7,6 +7,7 @@ import com.bibek.taskmanager.presentation.navigation.graph.Navigator
 import com.bibek.taskmanager.presentation.navigation.routes.Destinations
 import com.bibek.taskmanager.utils.NetworkResult
 import com.bibek.taskmanager.utils.Toaster
+import com.bibek.taskmanager.utils.validateCredentials
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -45,6 +46,16 @@ class SignUpViewModel @Inject constructor(
     }
 
     private suspend fun signUp() {
+        val isValid = validateCredentials(
+            username = uiState.value.userName,
+            emailAddress = uiState.value.email,
+            password = uiState.value.password,
+            isLogin = false
+        )
+        if (!isValid.first) {
+            toaster.error(isValid.second)
+            return
+        }
         useCases.signUpUseCase.invoke(
             email = uiState.value.email,
             password = uiState.value.password,
@@ -62,18 +73,18 @@ class SignUpViewModel @Inject constructor(
                 }
 
                 is NetworkResult.Success -> {
-                    if(networkResult.data?.response != null) {
+                    if (networkResult.data?.response != null) {
                         useCases.savePasswordUseCase.invoke(password = uiState.value.password)
                         useCases.saveEmailUseCase.invoke(email = uiState.value.email)
                         useCases.saveUserNameUseCase.invoke(userName = uiState.value.userName)
                         useCases.saveTokenUseCase.invoke(token = networkResult.data.response)
-                        navigator.navigate(Destinations.Task.route){
-                            popUpTo(Destinations.Login.route){
+                        navigator.navigate(Destinations.Task.route) {
+                            popUpTo(Destinations.Login.route) {
                                 inclusive = true
                             }
                         }
-                    }else{
-                        toaster.error(networkResult.message?: "Something Went Wrong")
+                    } else {
+                        toaster.error(networkResult.message ?: "Something Went Wrong")
                     }
 
                 }
@@ -103,4 +114,6 @@ class SignUpViewModel @Inject constructor(
     private fun updateUserName(event: SignUpEvent.OnUserNameTextChange) {
         uiState.update { loginState -> loginState.copy(userName = event.text.take(40)) }
     }
+
+
 }
